@@ -4,32 +4,21 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 // Stock array with initial quantities of 0
 let stockArray = {
   "dohar olive": 0,
-  "dohar pink": 0,
-  "60x78 wine": 0,
-  "fitted wine": 0,
-  "pillow box": 0,
-  "pillow grey": 0,
-  "pillow foot": 0,
-  "pillow pista": 0,
-  "1+2 Vegas": 0,
-  "fitted chicago": 0,
-  "fitted leaves": 0,
-  "1+2 tokyo": 0,
-  "set diam": 0,
-  "dohar dil": 0
+"Purple Fitted": 0,
+""
 };
 
 // Hardcoded SKU to stock mapping
 const skuToStockMapping = {
   // Example mappings - modify these according to your actual SKUs
-  'Olive Dohar': {
-    "dohar olive": 1
+  'Purple Fitted': {
+    "Fitted Purple": 1
   },
-  'Vegas 1+2': {
-    "1+2 Vegas": 1
+  'Purple 60x78': {
+    "60x78 Purple": 1
   },
-  'Pink dohar': {
-    "dohar pink": 1
+  'Purple 36x78': {
+    "36x78 Purple": 1
   },
   '2pc box,foot,grey,pista': {
     "pillow box": 2,
@@ -37,26 +26,98 @@ const skuToStockMapping = {
     "pillow grey": 2,
     "pillow pista": 2
   },
-  '60x78 wine': {
-    "60x78 wine": 1
+  'Florica Fitted': {
+    "Fitted Florica": 1
   },
-  'wine fitted': {
-    "fitted wine": 1
+  'Harmony Fitted': {
+    "Fitted Harmony": 1
   },
-  'chicago fitted': {
-    "fitted chicago": 1
+  'Graphix 60x78': {
+    "60x78 Graphix": 1
   },
-  'green leaves fitted.': {
-    "fitted leaves": 1
+  'Harmony 60x78': {
+    "60x78 Harmony": 1
   },
-  'Tokyo 1+2': {
-    "1+2 tokyo": 1
+  'Florica 36x78': {
+    "36x78 Florica": 1
   },
-  'multi diamond com set': {
-    "set diam": 1
+  'Graphix 36x78': {
+    "36x78 Graphix": 1
   },
-  'dil dohar': {
-    "dohar dil": 1
+  'Florica 60x78': {
+    "60x78 Florica": 1
+  },
+  'Harmony 36x78': {
+    "36x78 Harmony": 1
+  },
+  'CubeBrwon Fitted': {
+    "Fitted CubeBrwon": 1
+  },
+  'CubeBrown 60x78': {
+    "60x78 CubeBrown": 1
+  },
+  'Olive 36x78': {
+    "36x78 Olive": 1
+  },
+  'GeoFusion 36x78': {
+    "36x78 GeoFusion": 1
+  },
+  'Olive 60x78': {
+    "60x78 Olive": 1
+  },
+  'GeoFusion Fitted': {
+    "Fitted GeoFusion": 1
+  },
+  'GeoFusion 60x78': {
+    "60x78 GeoFusion": 1
+  },
+  'Olive Fitted': {
+    "Fitted Olive": 1
+  },
+  'Beige 60x78': {
+    "60x78 Beige": 1
+  },
+  'Beige Fitted': {
+    "Fitted Beige": 1
+  },
+  'Beige 36x78': {
+    "36x78 Beige": 1
+  },
+  'Vintage 60x78': {
+    "60x78 Vintage": 1
+  },
+  'Linear 60x78': {
+    "60x78 Linear": 1
+  },
+  'Silver Fitted': {
+    "Fitted Silver": 1
+  },
+  'Silver 36x78': {
+    "36x78 Silver": 1
+  },
+  'Vintage Fitted': {
+    "Fitted Vintage": 1
+  },
+  'Cube 36x78': {
+    "36x78 Cube": 1
+  },
+  'Vintage 36x78': {
+    "36x78 Vintage": 1
+  },
+  'Cube 60x78': {
+    "60x78 Cube": 1
+  },
+  'Cube Fitted': {
+    "Fitted Cube": 1
+  },
+  'Linear Fitted': {
+    "Fitted Linear": 1
+  },
+  'Linear 36x78': {
+    "36x78 Linear": 1
+  },
+  'Silver 60x78': {
+    "60x78 Silver": 1
   }
   // Add more SKU mappings here as needed
 };
