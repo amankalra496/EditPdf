@@ -11,7 +11,12 @@ let stockArray = {
   "pillow grey": 0,
   "pillow foot": 0,
   "pillow pista": 0,
-  "1+2 Vegas": 0
+  "1+2 Vegas": 0,
+  "fitted chicago": 0,
+  "fitted leaves": 0,
+  "1+2 tokyo": 0,
+  "set diam": 0,
+  "dohar dil": 0
 };
 
 // Hardcoded SKU to stock mapping
@@ -35,11 +40,57 @@ const skuToStockMapping = {
   '60x78 wine': {
     "60x78 wine": 1
   },
-  'fitted wine': {
+  'wine fitted': {
     "fitted wine": 1
+  },
+  'chicago fitted': {
+    "fitted chicago": 1
+  },
+  'green leaves fitted.': {
+    "fitted leaves": 1
+  },
+  'Tokyo 1+2': {
+    "1+2 tokyo": 1
+  },
+  'multi diamond com set': {
+    "set diam": 1
+  },
+  'dil dohar': {
+    "dohar dil": 1
   }
   // Add more SKU mappings here as needed
 };
+
+// Initialize file handling when DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+  // Enhanced file input handling
+  document.getElementById('upload').addEventListener('change', function(e) {
+    const fileName = e.target.files[0]?.name;
+    const fileNameDiv = document.getElementById('fileName');
+    const processBtn = document.getElementById('processBtn');
+    
+    if (fileName) {
+      fileNameDiv.textContent = `Selected: ${fileName}`;
+      fileNameDiv.style.display = 'block';
+      processBtn.disabled = false;
+    } else {
+      fileNameDiv.style.display = 'none';
+      processBtn.disabled = true;
+    }
+  });
+});
+
+// Add loading state management
+function setLoadingState(isLoading) {
+  const processBtn = document.getElementById('processBtn');
+  if (isLoading) {
+    processBtn.classList.add('loading');
+    processBtn.disabled = true;
+  } else {
+    processBtn.classList.remove('loading');
+    processBtn.disabled = false;
+  }
+}
 
 async function processPDF() {
   const fileInput = document.getElementById("upload");
@@ -47,6 +98,9 @@ async function processPDF() {
     alert("Please upload a PDF file.");
     return;
   }
+  
+  // Set loading state
+  setLoadingState(true);
   
   const file = fileInput.files[0];
   const arrayBuffer = await file.arrayBuffer();
@@ -214,6 +268,9 @@ async function processPDF() {
   link.href = URL.createObjectURL(blob);
   link.download = "updated.pdf";
   link.click();
+  
+  // Remove loading state
+  setLoadingState(false);
 }
 
 function displayStockArray() {
@@ -221,8 +278,8 @@ function displayStockArray() {
   
   // Define the custom sort order
   const sortOrder = [
-    "1+1", "1+2", "72x78", "60x78", "36x78", "72x72",
-    "Dohar Single", "Dohar Double", "Set Double", 
+    "1+1", "1+2", "fitted", "60x78", "36x78", "72x72",
+    "Dohar Single", "Dohar", "Set", 
     "Com Double", "Com Single"
   ];
   
@@ -247,20 +304,70 @@ function displayStockArray() {
     return itemA.localeCompare(itemB);
   });
   
-  let html = '<h3>Final Stock:</h3>';
+  let html = '<h3><i class="fas fa-chart-bar"></i> Stock Summary</h3>';
   
   if (filteredStock.length === 0) {
-    html += '<p>No items with quantity greater than 0</p>';
+    html += '<div class="no-items"><i class="fas fa-info-circle"></i> No items with quantity greater than 0</div>';
   } else {
-    html += '<ul>';
+    // Create copyable text format
+    let copyText = "📦 Stock Summary:\n";
     for (const [stockItem, quantity] of filteredStock) {
-      html += `<li><strong>${stockItem}:</strong> ${quantity}</li>`;
+      copyText += `• ${stockItem} -- ${quantity}\n`;
     }
-    html += '</ul>';
+    
+    html += '<div class="stock-grid">';
+    for (const [stockItem, quantity] of filteredStock) {
+      html += `
+        <div class="stock-item">
+          <span class="stock-name">${stockItem}</span>
+          <span class="stock-quantity">${quantity}</span>
+        </div>
+      `;
+    }
+    html += '</div>';
+    
+    // Add copyable text area
+    html += `
+      <div class="copy-section">
+        <h4><i class="fas fa-copy"></i> Copy for WhatsApp</h4>
+        <textarea id="copyText" class="copy-textarea" readonly>${copyText}</textarea>
+        <button class="copy-btn" onclick="copyToClipboard()">
+          <i class="fas fa-copy"></i> Copy Text
+        </button>
+      </div>
+    `;
   }
   
   resultsDiv.innerHTML = html;
+  resultsDiv.classList.add('show');
   
   console.log('Filtered and Sorted Stock Array:', filteredStock);
   console.log('Full Stock Array:', stockArray);
+}
+
+function copyToClipboard() {
+  const copyText = document.getElementById('copyText');
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); // For mobile devices
+  
+  try {
+    document.execCommand('copy');
+    
+    // Visual feedback
+    const copyBtn = document.querySelector('.copy-btn');
+    const originalText = copyBtn.innerHTML;
+    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+    copyBtn.style.background = '#28a745';
+    
+    setTimeout(() => {
+      copyBtn.innerHTML = originalText;
+      copyBtn.style.background = '';
+    }, 2000);
+    
+  } catch (err) {
+    // Fallback for mobile
+    copyText.focus();
+    copyText.select();
+    alert('Text selected! Press Ctrl+C (or Cmd+C on Mac) to copy, or long-press and select "Copy" on mobile.');
+  }
 }
