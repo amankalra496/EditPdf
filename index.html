@@ -2,14 +2,369 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PDF SKU to Stock Processor</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+      background-size: 200% 100%;
+      animation: gradientShift 3s ease-in-out infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .header {
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      color: #333;
+      font-size: 2.2em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      color: #666;
+      font-size: 1.1em;
+      font-weight: 300;
+    }
+
+    .upload-section {
+      margin-bottom: 40px;
+    }
+
+    .file-input-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .file-input {
+      position: absolute;
+      left: -9999px;
+      opacity: 0;
+    }
+
+    .file-input-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 30px;
+      background: #f8f9ff;
+      border: 2px dashed #667eea;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      color: #667eea;
+      min-width: 280px;
+    }
+
+    .file-input-label:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    }
+
+    .file-input-label i {
+      font-size: 1.2em;
+    }
+
+    .file-name {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #e8f2ff;
+      border-radius: 8px;
+      color: #333;
+      font-size: 0.9em;
+      display: none;
+    }
+
+    .process-btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      min-width: 200px;
+    }
+
+    .process-btn:hover:not(:disabled) {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    }
+
+    .process-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .process-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .process-btn .btn-text {
+      transition: opacity 0.3s ease;
+    }
+
+    .process-btn .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .process-btn.loading .btn-text {
+      opacity: 0;
+    }
+
+    .process-btn.loading .spinner {
+      opacity: 1;
+    }
+
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .results {
+      margin-top: 40px;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+    }
+
+    .results.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .results h3 {
+      color: #333;
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stock-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .stock-item {
+      background: #f8f9ff;
+      border: 1px solid #e1e8ff;
+      border-radius: 12px;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .stock-item:hover {
+      background: #e8f2ff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+    }
+
+    .stock-name {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .stock-quantity {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+
+    .no-items {
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      padding: 40px;
+      background: #f8f9ff;
+      border-radius: 12px;
+    }
+
+    .copy-section {
+      margin-top: 30px;
+      padding: 25px;
+      background: #f0f4ff;
+      border-radius: 15px;
+      border: 2px solid #e1e8ff;
+    }
+
+    .copy-section h4 {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 1.1em;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .copy-textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 15px;
+      border: 2px solid #d0d9ff;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      background: white;
+      color: #333;
+      resize: vertical;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .copy-textarea:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .copy-btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    }
+
+    .copy-btn:active {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 30px 20px;
+        margin: 10px;
+      }
+      
+      .header h1 {
+        font-size: 1.8em;
+      }
+      
+      .stock-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h2>Upload PDF File</h2>
-  <input type="file" id="upload" accept="application/pdf" />
-  <button onclick="processPDF()">Process PDF</button>
-  
-  <div id="results" style="margin-top: 20px;"></div>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-file-pdf"></i> PDF Stock Processor</h1>
+      <p>Upload your PDF file to extract SKU data and generate stock information</p>
+    </div>
+
+    <div class="upload-section">
+      <div class="file-input-wrapper">
+        <input type="file" id="upload" class="file-input" accept="application/pdf" />
+        <label for="upload" class="file-input-label">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <span>Choose PDF File</span>
+        </label>
+      </div>
+      <div id="fileName" class="file-name"></div>
+    </div>
+
+    <button id="processBtn" class="process-btn" onclick="processPDF()" disabled>
+      <span class="btn-text">
+        <i class="fas fa-cogs"></i> Process PDF
+      </span>
+      <div class="spinner"></div>
+    </button>
+    
+    <div id="results" class="results"></div>
+  </div>
   
   <!-- Include PDF-lib -->
   <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
