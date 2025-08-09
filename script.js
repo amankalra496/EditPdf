@@ -3,8 +3,40 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 
 // Stock array with initial quantities of 0
 let stockArray = {
-  "dohar olive": 0,
-"Purple Fitted": 0
+  "Fitted Purple": 0,
+"60x78 Purple": 0,
+"36x78 Purple": 0,
+"Fitted Florica": 0,
+"Fitted Harmony": 0,
+"60x78 Graphix": 0,
+"60x78 Harmony": 0,
+"36x78 Florica": 0,
+"36x78 Graphix": 0,
+"60x78 Florica": 0,
+"36x78 Harmony": 0,
+"Fitted CubeBrwon": 0,
+"60x78 CubeBrown": 0,
+"36x78 Olive": 0,
+"36x78 GeoFusion": 0,
+"60x78 Olive": 0,
+"Fitted GeoFusion": 0,
+"60x78 GeoFusion": 0,
+"Fitted Olive": 0,
+"60x78 Beige": 0,
+"Fitted Beige": 0,
+"36x78 Beige": 0,
+"60x78 Vintage": 0,
+"60x78 Linear": 0,
+"Fitted Silver": 0,
+"36x78 Silver": 0,
+"Fitted Vintage": 0,
+"36x78 Cube": 0,
+"36x78 Vintage": 0,
+"60x78 Cube": 0,
+"Fitted Cube": 0,
+"Fitted Linear": 0,
+"36x78 Linear": 0,
+"60x78 Silver": 0
 };
 
 // Hardcoded SKU to stock mapping
