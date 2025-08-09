@@ -4,8 +4,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc =
 // Stock array with initial quantities of 0
 let stockArray = {
   "dohar olive": 0,
-"Purple Fitted": 0,
-""
+"Purple Fitted": 0
 };
 
 // Hardcoded SKU to stock mapping
