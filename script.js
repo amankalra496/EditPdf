@@ -65,7 +65,7 @@ let stockArray = {
 "Fitted dust": 0,
 "60x78 dust": 0,
 "60x78 football": 0,
-"Fitted berlin": 0,
+"Fitted Berlin": 0,
 "Fitted bridge": 0,
 "60x78 berlin": 0,
 "Fitted dil": 0,
@@ -105,8 +105,60 @@ let stockArray = {
 "Fitted Green": 0,
 "1+1 grey": 0,
 "1+1 diam": 0,
-"36x78 pulmeria": 0,
-"36x78 pulmeria": 0
+"Fitted Leafora Greens": 0,
+"Fitted LeaforaCream": 0,
+"60x78 Leafora Greens": 0,
+"60x78 LeaforaCream": 0,
+"1+2 Leafora Greens": 0,
+"1+2 LeaforaCream": 0,
+"60x78 Zigzag": 0,
+"1+1 Zigzag": 0,
+"1+2 Zigzag": 0,
+"Fitted Zigzag": 0,
+"1+1 Box": 0,
+"1+2 Box": 0,
+"1+1 Blue Flower": 0,
+"1+1 Navy": 0,
+"1+1 Berlin": 0,
+"1+2 Navy": 0,
+"1+2 Berlin": 0,
+"1+2 Blue Flower": 0,
+"1+2 Moon": 0,
+"1+1 Moon": 0,
+"1+2 PL": 0,
+"1+1 Norway": 0,
+"1+2 Confetti": 0,
+"1+1 Pink": 0,
+"1+2 Norway": 0,
+"1+1 Confetti": 0,
+"1+2 Pink": 0,
+"60x78 Pink": 0,
+"Fitted Pink": 0,
+"60x78 Norway": 0,
+"Fitted Norway": 0,
+"60x78 Confetti": 0,
+"Fitted Confetti": 0,
+"60x78 Fiord": 0,
+"1+2 Fiord": 0,
+"1+1 Fiord": 0,
+"Fitted Fiord": 0,
+"60x78 Ecru": 0,
+"60x78 Sea": 0,
+"60x78 PL": 0,
+"Fitted PL": 0,
+"Fitted Sea": 0,
+"Fitted GL": 0,
+"Fitted Ecru": 0,
+"60x78 GL": 0,
+"1+1 Sea": 0,
+"1+2 Sea": 0,
+"1+2 Ecru": 0,
+"1+1 GL": 0,
+"1+2 GL": 0,
+"1+1 PL": 0,
+"Fitted Blue Flower": 0,
+"60x78 Blue Flower": 0,
+"60x78 Navy": 0
 };
 
 // Hardcoded SKU to stock mapping
@@ -305,7 +357,7 @@ const skuToStockMapping = {
     "60x78 football": 1
   },
   'brown fitted ||': {
-    "Fitted berlin": 1
+    "Fitted Berlin": 1
   },
   'bridge fitted ||': {
     "Fitted bridge": 1
@@ -423,7 +475,7 @@ const skuToStockMapping = {
     "1+1 diam": 1
   },
   'berlin fitted': {
-    "Fitted berlin": 1
+    "Fitted Berlin": 1
   },
   'Leafora Greens 72x78': {
     "Fitted Leafora Greens": 1
@@ -456,91 +508,91 @@ const skuToStockMapping = {
     "Fitted Zigzag": 1
   },
   'Box 1+1||': {
-    "1+1 box": 1
+    "1+1 Box": 1
   },
   'Box 1+2||': {
-    "1+2 box": 1
+    "1+2 Box": 1
   },
   'blue flower 1+1||': {
-    "1+1 blue flower": 1
+    "1+1 Blue Flower": 1
   },
   'navy 1+1||': {
-    "1+1 navy": 1
+    "1+1 Navy": 1
   },
   'brown 1+1||': {
-    "1+1 berlin": 1
+    "1+1 Berlin": 1
   },
   'navy 1+2||': {
-    "1+2 navy": 1
+    "1+2 Navy": 1
   },
   'brown 1+2||': {
-    "1+2 berlin": 1
+    "1+2 Berlin": 1
   },
   'blue flower 1+2||': {
-    "1+2 blue flower": 1
+    "1+2 Blue Flower": 1
   },
   'Moon mist 1+2||': {
-    "1+2 moon": 1
+    "1+2 Moon": 1
   },
   'Moon mist 1+1||': {
-    "1+1 moon": 1
+    "1+1 Moon": 1
   },
   'Pink Lehr 1+2 |||': {
     "1+2 PL": 1
   },
   'norway 1+1 |': {
-    "1+1 norway": 1
+    "1+1 Norway": 1
   },
   'confetti 1+2 |': {
-    "1+2 confetti": 1
+    "1+2 Confetti": 1
   },
   'pink flare 1+1 |': {
-    "1+1 pink": 1
+    "1+1 Pink": 1
   },
   'norway 1+2 |': {
-  "1+2 norway": 1
+  "1+2 Norway": 1
   },
   'confetti 1+1 |': {
-    "1+1 confetti": 1
+    "1+1 Confetti": 1
   },
   'pink flare 1+2 |': {
-    "1+2 pink": 1
+    "1+2 Pink": 1
   },
   'pink 60x78': {
-    "60x78 pink": 1
+    "60x78 Pink": 1
   },
   'pink fitted': {
-    "Fitted pink": 1
+    "Fitted Pink": 1
   },
   'norway 60x78': {
-    "60x78 norway": 1
+    "60x78 Norway": 1
   },
   'norway fitted': {
-    "Fitted norway": 1
+    "Fitted Norway": 1
   },
   'confetti 60x78': {
-    "60x78 confetti": 1
+    "60x78 Confetti": 1
   },
   'confetti fitted': {
-    "Fitted confetti": 1
+    "Fitted Confetti": 1
   },
   'Fiord 60 x 78': {
-    "60x78 fiord": 1
+    "60x78 Fiord": 1
   },
   'Fiord 1+2': {
-    "1+2 fiord": 1
+    "1+2 Fiord": 1
   },
   'Fiord 1+1': {
-    "1+1 fiord": 1
+    "1+1 Fiord": 1
   },
   'Fiord Fitted': {
-    "Fitted fiord": 1
+    "Fitted Fiord": 1
   },
   'Golden 60x78 |': {
     "60x78 Ecru": 1
   },
   'sea shell 60x78 |': {
-    "60x78 sea": 1
+    "60x78 Sea": 1
   },
   'Pink Lehr 60x78 |': {
     "60x78 PL": 1
@@ -549,7 +601,7 @@ const skuToStockMapping = {
     "Fitted PL": 1
   },
   'Sea shell Fitted |': {
-    "Fitted sea": 1
+    "Fitted Sea": 1
   },
   'Grey Lehr Fitted |': {
     "Fitted GL": 1
@@ -576,10 +628,10 @@ const skuToStockMapping = {
     "1+2 GL": 1
   },
   'Golden 1+1 |': {
-    "1+1 GL": 1
+    "1+1 Ecru": 1
   },
   'Pink Lehr 1+1 |': {
-    "1+2 PL": 1
+    "1+1 PL": 1
   },
   'blue flower fitted': {
     "Fitted Blue Flower": 1
