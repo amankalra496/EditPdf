@@ -63,11 +63,11 @@ let stockArray = {
 "36x78 vegas": 0,
 "Fitted vegas": 0,
 "Fitted dust": 0,
-"60x78 dust": 0,
+"60x78 Dust": 0,
 "60x78 football": 0,
 "Fitted Berlin": 0,
 "Fitted bridge": 0,
-"60x78 berlin": 0,
+"60x78 Berlin": 0,
 "Fitted dil": 0,
 "60x78 grey": 0,
 "Fitted yellow floral": 0,
@@ -158,7 +158,115 @@ let stockArray = {
 "1+1 PL": 0,
 "Fitted Blue Flower": 0,
 "60x78 Blue Flower": 0,
-"60x78 Navy": 0
+"60x78 Navy": 0,
+"60x78 Box": 0,
+"Fitted Moon": 0,
+"Fitted Box": 0,
+"Fitted Navy": 0,
+"1+1 WB": 0,
+"60x78 WB": 0,
+"60x78 Diam": 0,
+"60x78 Yellow Slice": 0,
+"Fitted Yellow Slice": 0,
+"60x78 Multi Triangle": 0,
+"Fitted Multi Triangle": 0,
+"Fitted WB": 0,
+"Fitted Diam": 0,
+"1+2 Chicago": 0,
+"1+1 Chicago": 0,
+"1+2 Columbus": 0,
+"1+1 Columbus": 0,
+"60x78 Columbus": 0,
+"60x78 Chicago": 0,
+"Fitted Columbus": 0,
+"Fitted Chicago": 0,
+"60x78 Snake": 0,
+"Fitted Snake": 0,
+"60x78 Brown Diam": 0,
+"Fitted Brown Diam": 0,
+"60x78 Grey Lines": 0,
+"Com Double Purple": 0,
+"Com Double Harmony": 0,
+"Com Double Yellow Floral": 0,
+"Com Double Columbus": 0,
+"Com Double Chicago": 0,
+"Com Double Graphix": 0,
+"Com Double Florica": 0,
+"Com Double CubeBrown": 0,
+"Com Double Geofusion": 0,
+"Com Double Olive": 0,
+"Com Double Beige": 0,
+"Com Double Zigzag": 0,
+"Com Double Silver": 0,
+"Com Double Linear": 0,
+"Com Double Vintage": 0,
+"Com Double Cube": 0,
+"Com Double SS": 0,
+"Com Double Queensland": 0,
+"Com Double Cambridge": 0,
+"Com Double Perth": 0,
+"Com Double Sydney": 0,
+"Com Double Toronto": 0,
+"Com Double Denver": 0,
+"Com Double Tokyo": 0,
+"Com Double Vegas": 0,
+"Com Double Confetti": 0,
+"Com Double Norway": 0,
+"Com Double GL": 0,
+"Com Double PL": 0,
+"Com Double Pulmeria": 0,
+"Com Double Dil": 0,
+"Com Double Diam": 0,
+"Com Double Ecru": 0,
+"Com Double Royal": 0,
+"Com Double Distorted": 0,
+"Com Double Sea": 0,
+"Com Double Grey Lines": 0,
+"Com Double Snake": 0,
+"Set Purple": 0,
+"Set Florica": 0,
+"Set Graphix": 0,
+"Set Harmony": 0,
+"Set Cubebrown": 0,
+"Set Olive": 0,
+"Set Beige": 0,
+"Set Geofusion": 0,
+"Set Silver": 0,
+"Set Vintage": 0,
+"Set Linear": 0,
+"Set Zigzag": 0,
+"Set Cube": 0,
+"Set SS": 0,
+"Set Queensland": 0,
+"Set Cambridge": 0,
+"Set Perth": 0,
+"Set Toronto": 0,
+"Set Sydney": 0,
+"Set Denver": 0,
+"Set Tokyo": 0,
+"Set Vegas": 0,
+"Set GL": 0,
+"Set PL": 0,
+"Set Peach": 0,
+"Set Lovely": 0,
+"Set Chicago": 0,
+"Set Columbus": 0,
+"Set Yellow Floral": 0,
+"Set Pink": 0,
+"Set Bridge Diam": 0,
+"Set Diam": 0,
+"Set Distorted": 0,
+"Set Navy": 0,
+"Set Sea": 0,
+"Set Grey Lines": 0,
+"Set Brown Diam": 0,
+"Set Pulmeria": 0,
+"Set Dust": 0,
+"Set Leaves": 0,
+"Set Royal": 0,
+"Set Wine": 0,
+"Set Dil": 0,
+"Set Box": 0
 };
 
 // Hardcoded SKU to stock mapping
@@ -351,7 +459,7 @@ const skuToStockMapping = {
     "Fitted dust": 1
   },
   'dust 60x78': {
-    "60x78 dust": 1
+    "60x78 Dust": 1
   },
   'football 60x78 ||': {
     "60x78 football": 1
@@ -363,7 +471,7 @@ const skuToStockMapping = {
     "Fitted bridge": 1
   },
   'brown 60x78 ||': {
-    "60x78 berlin": 1
+    "60x78 Berlin": 1
   },
   'dil fitted ||': {
     "Fitted dil": 1
@@ -659,6 +767,371 @@ const skuToStockMapping = {
   },
   'navy fitted //': {
     "Fitted Navy": 1
+  },
+  'Grey patta + football (1+1)': {
+    "1+1 Box": 1,
+    "1+1 WB": 1
+  },
+  'box + white blue (1+1)': {
+     "1+1 Box": 1,
+    "1+1 WB": 1
+  },
+  'wb 60x78': {
+    "60x78 WB": 1
+  },
+  'diam 60x78': {
+    "60x78 Diam": 1
+  },
+  'yellow slice 60x78': {
+    "60x78 Yellow Slice": 1
+  },
+  'yellow slice fitted': {
+    "Fitted Yellow Slice": 1
+  },
+  'pink lehar 60x78': {
+    "60x78 PL": 1
+  },
+  'multi triangle 60x78': {
+    "60x78 Multi Triangle": 1
+  },
+  'grey lehar 60x78': {
+    "60x78 GL": 1
+  },
+  'grey lehar fitted': {
+    "Fitted GL": 1
+  },
+  'pink lehar fitted': {
+    "Fitted PL": 1
+  },
+  'Multi triangle fitted': {
+    "Fitted Multi Triangle": 1
+  },
+  '6M-O2LU-0W8W': {
+    "Fitted WB": 1
+  },
+  'diamond fitted.': {
+    "Fitted Diam": 1
+  },
+  'chicago 1+2||': {
+    "1+2 Chicago": 1
+  },
+  'chicago 1+1||': {
+    "1+1 Chicago": 1
+  },
+  'columbus 1+2||': {
+    "1+2 Columbus": 1
+  },
+  'columbus 1+1||': {
+  "1+1 Columbus": 1
+  },
+  'columbus 60x78': {
+    "60x78 Columbus": 1
+  },
+  'chicago 60x78': {
+    "60x78 Chicago": 1
+  },
+  'columbus fitted': {
+    "Fitted Columbus": 1
+  },
+  'chicago fitted': {
+    "Fitted Chicago": 1
+  },
+  'snake 60x78': {
+    "60x78 Snake": 1
+  },
+  'pink stripes 60x78': {
+    "60x78 SS": 1
+  },
+  'snake fitted.': {
+    "Fitted Snake": 1
+  },
+  'pink stripes fitted .': {
+    "Fitted SS": 1
+  },
+  'brown diamond 60x78//,': {
+    "60x78 Brown Diam": 1
+  },
+  'brown diamond fitted //': {
+    "Fitted Brown Diam": 1
+  },
+  'dust gray 60x78': {
+    "60x78 Dust": 1
+  },
+  'grey lines 60x78': {
+    "60x78 Grey Lines": 1
+  },
+  'grey lines fitted.': {
+    "Fitted Tokyo": 1
+  },
+  'dust gray fitted .': {
+  "Fitted Dust": 1
+  },
+  'Purple Com Only': {
+    "Com Double Purple": 1
+  },
+  'harmony com only': {
+    "Com Double Harmony": 1
+  },
+  'yellow floral com only': {
+    "Com Double Yellow Floral": 1
+  },
+  'columbus com only': {
+    "Com Double Columbus": 1
+  },
+  'chicago com only': {
+    "Com Double Chicago ": 1
+  },
+  'graphix com only': {
+    "Com Double Graphix": 1
+  },
+  'Florica com only': {
+    "Com Double Florica": 1
+  },
+  'CubeBrown Com Only': {
+    "Com Double CubeBrown": 1
+  },
+  'GeoFusion Com Only': {
+    "Com Double Geofusion": 1
+  },
+  'Olive Com Only': {
+    "Com Double Olive": 1
+  },
+  'Beige Com Only': {
+    "Com Double Beige": 1
+  },
+  'ZigZag Com Only': {
+    "Com Double Zigzag": 1
+  },
+  'Silver Com Only': {
+    "Com Double Silver": 1
+  },
+  'Linear Com Only': {
+    "Com Double Linear": 1
+  },
+  'Vintage Com Only': {
+    "Com Double Vintage": 1
+  },
+  'Cube Com Only': {
+    "Com Double Cube": 1
+  },
+  'SS Com Only': {
+    "Com Double SS": 1
+  },
+  'Queensland Com Only': {
+    "Com Double Queensland": 1
+  },
+  'Cambridge Com Only': {
+    "Com Double Cambridge": 1
+  },
+  'Perth com only': {
+    "Com Double Perth": 1
+  },
+  'sydney com only': {
+    "Com Double Sydney": 1
+  },
+  'toronto com only': {
+    "Com Double Toronto": 1
+  },
+  'Denver Com Only': {
+    "Com Double Denver": 1
+  },
+  'Tokyo Com Only': {
+    "Com Double Tokyo": 1
+  },
+  'Vegas Com Only': {
+    "Com Double Vegas": 1
+  },
+  'confetti com only||': {
+    "Com Double Confetti": 1
+  },
+  'norway com only ||': {
+    "Com Double Norway": 1
+  },
+  'grey lehar double com only': {
+    "Com Double GL": 1
+  },
+  'pink lehar double com only': {
+    "Com Double PL": 1
+  },
+  'navy square double com only': {
+    "Com Double Navy": 1
+  },
+  'white floral double com only': {
+    "Com Double Pulmeria": 1
+  },
+  'dil double com only': {
+    "Com Double Dil": 1
+  },
+  'multi diamond com only': {
+    "Com Double Diam": 1
+  },
+  'Ecru white com only//': {
+    "Com Double Ecru": 1
+  },
+  'royal blue com only': {
+    "Com Double Royal": 1
+  },
+  'distorted com only': {
+    "Com Double Distorted": 1
+  },
+  'sea shell com only': {
+    "Com Double Sea": 1
+  },
+  'navy com only': {
+    "Com Double Navy": 1
+  },
+  'navy square com only': {
+    "Com Double Navy": 1
+  },
+  'grey lines com only': {
+    "Com Double Grey Lines": 1
+  },
+  'snake com only': {
+    "Com Double Snake": 1
+  },
+  'charcol com only': {
+    "Com Double Dust": 1
+  },
+  'green stripes com only': {
+    "Com Double SS": 1
+  },
+  'Purple Set': {
+    "Set Purple": 1
+  },
+  'Florica set': {
+    "Set Florica": 1
+  },
+  'graphix set': {
+    "Set Graphix": 1
+  },
+  'Harmony set': {
+    "Set Harmony": 1
+  },
+  'CubeBrown Set': {
+    "Set Cubebrown": 1
+  },
+  'Olive Com Set': {
+    "Set Olive": 1
+  },
+  'Beige Com Set': {
+    "Set Beige": 1
+  },
+  'GeoFusion Com Set': {
+    "Set Geofusion": 1
+  },
+  'Silver Set': {
+    "Set Silver": 1
+  },
+  'Vintage Set': {
+    "Set Vintage": 1
+  },
+  'Linear Set': {
+    "Set Linear": 1
+  },
+  'ZigZag Set': {
+    "Set Zigzag": 1
+  },
+  'Cube Set': {
+    "Set Cube": 1
+  },
+  'SS Set': {
+    "Set SS": 1
+  },
+  'Queensland Set': {
+    "Set Queensland": 1
+  },
+  'Cambridge Set': {
+    "Set Cambridge": 1
+  },
+  'Perth set': {
+    "Set Perth": 1
+  },
+  'Toronto set': {
+    "Set Toronto": 1
+  },
+  'Sydney set': {
+    "Set Sydney": 1
+  },
+  'Denver Set': {
+    "Set Denver": 1
+  },
+  'Tokyo set': {
+    "Set Tokyo": 1
+  },
+  'Vegas Set': {
+    "Set Vegas": 1
+  },
+  'GL com set': {
+    "Set GL": 1
+  },
+  'PL com set': {
+    "Set PL": 1
+  },
+  'peach set': {
+    "Set Peach": 1
+  },
+  'alaska set': {
+    "Set Lovely": 1
+  },
+  'chicago set': {
+    "Set Chicago": 1
+  },
+  'columbus set': {
+    "Set Columbus": 1
+  },
+  'yellow floral set': {
+    "Set Yellow Floral": 1
+  },
+  'Pink set': {
+    "Set Pink": 1
+  },
+  'bridge diamond com set': {
+    "Set Bridge Diam": 1
+  },
+  'multi diamond com set': {
+    "Set Diam": 1
+  },
+  'distorted com set': {
+    "Set Distorted": 1
+  },
+  'navy com set': {
+    "Set Navy": 1
+  },
+  'sea shell com set': {
+    "Set Sea": 1
+  },
+  'lovely set': {
+    "Set Lovely": 1
+  },
+  'grey lines com set': {
+    "Set Grey Lines": 1
+  },
+'brown diamond com set': {
+    "Set Brown Diam": 1
+  },
+  'rose pink com set': {
+    "Set Pulmeria": 1
+  },
+  'charcol com set': {
+    "Set Dust": 1
+  },
+  'green leaves com set': {
+    "Set Leaves": 1
+  },
+  'White floral com set': {
+    "Set Pulmeria": 1
+  },
+  'royal blue com set': {
+    "Set Royal": 1
+  },
+  'wine with flowers com set': {
+    "Set Wine": 1
+  },
+  'dil wala com set': {
+    "Set Dil": 1
+  },
+  'box com set': {
+    "Set Box": 1
   }
   // Add more SKU mappings here as needed
 };
