@@ -266,7 +266,18 @@ let stockArray = {
 "Set Royal": 0,
 "Set Wine": 0,
 "Set Dil": 0,
-"Set Box": 0
+"Set Box": 0,
+"S/b com Pink": 0,
+"S/b com Norway": 0,
+"S/b com Confetti": 0,
+"S/b com GL": 0,
+"S/b com PL": 0,
+"S/b com Lovely": 0,
+"S/b com Distorted": 0,
+"S/b com Ecru": 0,
+"S/b com Box": 0,
+"S/b com Pulmeria": 0,
+"S/b com Dil": 0
 };
 
 // Hardcoded SKU to stock mapping
@@ -1132,6 +1143,39 @@ const skuToStockMapping = {
   },
   'box com set': {
     "Set Box": 1
+  },
+  'pink s/b com': {
+    "S/b com Pink": 1
+  },
+  'norway s/b com': {
+    "S/b com Norway": 1
+  },
+  'confetti s/b com': {
+    "S/b com Confetti": 1
+  },
+  'grey lehar s/b com only': {
+    "S/b com GL": 1
+  },
+  'pink lehar s/b com only': {
+    "S/b com PL": 1
+  },
+  'lovely s/b comforter onlyy': {
+    "S/b com Lovely": 1
+  },
+  'distorted s/b com only': {
+    "S/b com Distorted": 1
+  },
+  'ecru white s/b com only': {
+    "S/b com Ecru": 1
+  },
+  'box s/b com only': {
+    "S/b com Box": 1
+  },
+  'white floral s/b com only': {
+    "S/b com Pulmeria": 1
+  },
+  'dil s/b com only': {
+    "S/b com Dil": 1
   }
   // Add more SKU mappings here as needed
 };
