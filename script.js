@@ -71,7 +71,42 @@ let stockArray = {
 "Fitted dil": 0,
 "60x78 grey": 0,
 "Fitted yellow floral": 0,
-"60x78 yellow floral": 0
+"60x78 yellow floral": 0,
+"60x78 bridge diamond": 0,
+"36x78 cannon": 0,
+"60x78 chino": 0,
+"Fitted cannon": 0,
+"60x78 cannon": 0,
+"Fitted peach": 0,
+"36x78 peach": 0,
+"60x78 pulmeria": 0,
+"60x78 Green": 0,
+"60x78 leaves": 0,
+"60x78 dil": 0,
+"60x78 wine": 0,
+"60x78 royal": 0,
+"60x78 lovely": 0,
+"36x78 berlin": 0,
+"Fitted Foot": 0,
+"Fitted grey": 0,
+"Fitted wine": 0,
+"Fitted leaves": 0,
+"36x78 pulmeria": 0,
+"36x78 wine": 0,
+"36x78 lovely": 0,
+"36x78 football": 0,
+"36x78 green": 0,
+"36x78 leaves": 0,
+"Fitted Pulmeria": 0,
+"36x78 Royal": 0,
+"Fitted royal": 0,
+"36x78 Dil": 0,
+"Fitted Lovely": 0,
+""Fitted Green": 0,
+"1+1 grey": 0,
+"1+1 diam": 0,
+"36x78 pulmeria": 0,
+"36x78 pulmeria": 0
 };
 
 // Hardcoded SKU to stock mapping
@@ -289,6 +324,103 @@ const skuToStockMapping = {
   },
   'yellow floral 60x78': {
     "60x78 yellow floral": 1
+  },
+  'bridge diamond 60x78': {
+    "60x78 bridge diamond": 1
+  },
+  'cannon pink s/b fitted': {
+    "36x78 cannon": 1
+  },
+  'chino grey 60x78': {
+    "60x78 chino": 1
+  },
+  'cannon pink fitted.': {
+    "Fitted cannon": 1
+  },
+  'cannon pink 60x78': {
+    "60x78 cannon": 1
+  },
+  'peach fitted': {
+    "Fitted peach": 1
+  },
+  'peach s/b fitted': {
+    "36x78 peach": 1
+  },
+  'white floral 60x78': {
+    "60x78 pulmeria": 1
+  },
+  'green kashmira 60x78': {
+    "60x78 Green": 1
+  },
+  'green leaves 60x78': {
+    "60x78 leaves": 1
+  },
+  'dil 60x78': {
+    "60x78 dil": 1
+  },
+  'wine 60x78': {
+    "60x78 wine": 1
+  },
+  'royal 60x78': {
+    "60x78 royal": 1
+  },
+  'lovely 60x78': {
+    "60x78 lovely": 1
+  },
+  'brown kashmira s/b fitted.': {
+    "36x78 berlin": 1
+  },
+  'football fitted.': {
+    "Fitted Foot": 1
+  },
+  'grey patta fitted.': {
+    "Fitted grey": 1
+  },
+  'wine fitted.': {
+    "Fitted wine": 1
+  },
+  'green leaves fitted.': {
+    "Fitted leaves": 1
+  },
+  'white floral s/b fitted.': {
+    "36x78 pulmeria": 1
+  },
+  'wine s/b fitted.': {
+    "36x78 wine": 1
+  },
+  'lovely s/b fitted.': {
+    "36x78 lovely": 1
+  },
+  'football s/b fitted..': {
+    "36x78 football": 1
+  },
+  'green kashmira s/b fitted..': {
+    "36x78 green": 1
+  },
+  'green leaves s/b fitted.': {
+    "36x78 leaves": 1
+  },
+  'white floral fitted..': {
+    "Fitted Pulmeria": 1
+  },
+  'royal s/b fitted .': {
+    "36x78 Royal": 1
+  },
+  'royal fitted.': {
+    "Fitted royal": 1
+  },
+  'dil s/b fitted.': {
+    "36x78 Dil": 1
+  },
+  'lovely fitted .': {
+    "Fitted Lovely": 1
+  },
+  'green kashmira fitted.': {
+    "Fitted Green": 1
+  },
+  'grey patta +diamond 1+1': {
+    "1+1 grey": 1,
+    "1+1 diam": 1
   }
   // Add more SKU mappings here as needed
 };
