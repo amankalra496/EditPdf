@@ -36,7 +36,42 @@ let stockArray = {
 "Fitted Cube": 0,
 "Fitted Linear": 0,
 "36x78 Linear": 0,
-"60x78 Silver": 0
+"60x78 Silver": 0,
+"60x78 SS": 0,
+"36x78 SS": 0,
+"Fitted SS": 0,
+"Fitted Cambridge": 0,
+"36x78 Cambridge": 0,
+"36x78 Queensland": 0,
+"Fitted Queensland": 0,
+"60x78 Queensland": 0,
+"Fitted Perth": 0,
+"36x78 Perth": 0,
+"60x78 Perth": 0,
+"36x78 toronto": 0,
+"60x78 sydney": 0,
+"60x78 toronto": 0,
+"Fitted toronto": 0,
+"Fitted sydney": 0,
+"36x78 denver": 0,
+"60x78 denver": 0,
+"Fitted tokyo": 0,
+"60x78 tokyo": 0,
+"36x78 tokyo": 0,
+"Fitted denver": 0,
+"60x78 vegas": 0,
+"36x78 vegas": 0,
+"Fitted vegas": 0,
+"Fitted dust": 0,
+"60x78 dust": 0,
+"60x78 football": 0,
+"Fitted berlin": 0,
+"Fitted bridge": 0,
+"60x78 berlin": 0,
+"Fitted dil": 0,
+"60x78 grey": 0,
+"Fitted yellow floral": 0,
+"60x78 yellow floral": 0
 };
 
 // Hardcoded SKU to stock mapping
@@ -149,6 +184,111 @@ const skuToStockMapping = {
   },
   'Silver 60x78': {
     "60x78 Silver": 1
+  },
+  'SS 60x78': {
+    "60x78 SS": 1
+  },
+  'SS 36x78': {
+    "36x78 SS": 1
+  },
+  'SS Fitted': {
+    "Fitted SS": 1
+  },
+  'Cambridge Fitted': {
+    "Fitted Cambridge": 1
+  },
+  'Cambridge 36x78': {
+    "36x78 Cambridge": 1
+  },
+  'Queensland 36x78': {
+    "36x78 Queensland": 1
+  },
+  'Queensland Fitted': {
+    "Fitted Queensland": 1
+  },
+  'Queensland 60x78': {
+    "60x78 Queensland": 1
+  },
+  'Perth Fitted': {
+    "Fitted Perth": 1
+  },
+  'Perth 36x78': {
+    "36x78 Perth": 1
+  },
+  'Perth 60x78': {
+    "60x78 Perth": 1
+  },
+  'toronto 36x78': {
+    "36x78 toronto": 1
+  },
+  'sydney 60x78': {
+    "60x78 sydney": 1
+  },
+  'toronto 60x78': {
+    "60x78 toronto": 1
+  },
+  'toronto fitted': {
+    "Fitted toronto": 1
+  },
+  'sydney fitted': {
+    "Fitted sydney": 1
+  },
+  'denver 36x78': {
+    "36x78 denver": 1
+  },
+  'denver 60x78': {
+    "60x78 denver": 1
+  },
+  'tokyo fitted': {
+    "Fitted tokyo": 1
+  },
+  'tokyo 60x78': {
+    "60x78 tokyo": 1
+  },
+  'tokyo 36x78': {
+    "36x78 tokyo": 1
+  },
+  'denver fitted': {
+    "Fitted denver": 1
+  },
+  'vegas 60x78': {
+    "60x78 vegas": 1
+  },
+  'vegas 36x78': {
+    "36x78 vegas": 1
+  },
+  'vegas fitted': {
+    "Fitted vegas": 1
+  },
+  'dust fitted': {
+    "Fitted dust": 1
+  },
+  'dust 60x78': {
+    "60x78 dust": 1
+  },
+  'football 60x78 ||': {
+    "60x78 football": 1
+  },
+  'brown fitted ||': {
+    "Fitted berlin": 1
+  },
+  'bridge fitted ||': {
+    "Fitted bridge": 1
+  },
+  'brown 60x78 ||': {
+    "60x78 berlin": 1
+  },
+  'dil fitted ||': {
+    "Fitted dil": 1
+  },
+  'grey 60x78 ||': {
+    "60x78 grey": 1
+  },
+  'yellow floral fitted': {
+    "Fitted yellow floral": 1
+  },
+  'yellow floral 60x78': {
+    "60x78 yellow floral": 1
   }
   // Add more SKU mappings here as needed
 };
